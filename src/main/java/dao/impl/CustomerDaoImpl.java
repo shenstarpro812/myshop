@@ -54,6 +54,13 @@ public class CustomerDaoImpl implements RoleDao {
         String sql = "insert into customers (name,password,phone,money) values(?,?,?,?)";
         Connection connection = JDBCUtil.getConnection("myshop");
 
+        try {
+            PreparedStatement pstatem = connection.prepareStatement(sql);
+            pstatem.setString(1,customer.getName());
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
         return false;
     }
