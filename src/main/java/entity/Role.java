@@ -1,4 +1,4 @@
-package dao;
+package entity;
 
 public abstract class Role {
     protected int id;
@@ -11,7 +11,9 @@ public abstract class Role {
         this.name = name;
         this.password = password;
     }
-
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getId() {
         return id;
     }
@@ -31,4 +33,5 @@ public abstract class Role {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
